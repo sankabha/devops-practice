@@ -6,11 +6,6 @@ pipeline{
     }
     agent any
     stages {
-        stage('Clone Git Repository') {
-            steps {
-                git 'https://github.com/sankabha/devops-practice.git'
-            }
-        }
         stage('Build Docker Image') {
             steps {
                 script {
