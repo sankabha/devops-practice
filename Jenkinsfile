@@ -1,15 +1,14 @@
-pipeline{
+pipeline {
     environment {
-        // Define environment variables
         DOCKER_REGISTRY = "sankabha22/aws_cli-config"
-        DOCKER_CREDENTIALS_ID = 'sankabha22'
+        DOCKER_CREDENTIALS_ID = 'docker-hub-creds'
     }
     agent any
     stages {
         stage('Build Docker Image') {
             steps {
                 script {
-                    dockerImage=docker.build("${DOCKER_REGISTRY}:latest-${env.BUILD_ID}")
+                    dockerImage = docker.build("${DOCKER_REGISTRY}:latest-${env.BUILD_ID}")
                 }
             }
         }
