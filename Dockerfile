@@ -1,7 +1,7 @@
 FROM fedora:latest
 
 # Install dependencies
-RUN dnf update && dnf install -y \
+RUN dnf update -y && dnf install -y \
     curl \
     unzip
 
